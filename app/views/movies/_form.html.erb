@@ -1,4 +1,5 @@
 <%= simple_form_for @movie do |f| %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select Category") %>
   <%= f.input :title, label: 'Movie title' %>
   <%= f.input :description %>
   <%= f.input :director %>
