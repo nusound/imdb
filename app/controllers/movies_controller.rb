@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :find_movie, only:[:show, :edit, :update, :delete]
+  before_action :find_movie, only:[:show, :edit, :update, :destroy]
 
   def index
     @movies = Movie.all.order('created_at DESC')
@@ -20,6 +20,22 @@ class MoviesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @movie.update(movie_params)
+      redirect_to movie_path(@movie)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @movie.destroy
+    redirect_to root_path
   end
 
   private
