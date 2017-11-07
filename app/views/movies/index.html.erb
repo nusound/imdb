@@ -1,4 +1,9 @@
-<h1>Movie index page</h1>
-<% @movies.each do |movie| %>
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
+<h1 class="current_category"><%= params[:category] %></h1>
+
+<% if @movies.count ==0 %>
+  <h3>There are no plays in this category</h3>
+<% else %>
+  <% @movies.each do |movie| %>
+    <h2><%= link_to movie.title, movie_path(movie) %></h2>
+  <% end %>
 <% end %>
