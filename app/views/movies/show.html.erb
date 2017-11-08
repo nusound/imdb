@@ -7,14 +7,23 @@
       <h2 class="movie-title"><%= @movie.title %></h2>
       <h3 class="movie-director"><span><em>From: </em></span><%= @movie.director %></h3>
       <h4 class="movie-director"><%= @movie.category.name%></h4>
-      <p class="movie-desac"><%= @movie.description %></p>
+      <p class="movie-desc"><%= @movie.description %></p>
     </div>
 
   </div>
 </div>
 
-
-
+<div class="row">
+  <div class="col-md-12">
+    <div class="reviews">
+      <h1>Reviews</h1>
+        <%= render @movie.reviews %>
+        <div>
+          <%= link_to 'Add Reviews', new_movie_review_path(@movie), class: 'btn-custom' %>
+        </div>
+    </div>
+  </div>
+</div>
 
 <div class="links btn-group">
   <% if user_signed_in? %>
