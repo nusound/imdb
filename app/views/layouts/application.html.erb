@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Imdb</title>
+    <title>My Movies</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +12,7 @@
     <nav class="navbar navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to 'Imdb', root_path, class: 'navbar-brand' %>
+          <%= link_to 'My Movies', root_path, class: 'navbar-brand' %>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
@@ -26,7 +26,7 @@
 
         <ul class="nav navbar-nav">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Genres <span class="caret"></span></a>
 
             <ul class="dropdown-menu" role="menu">
               <% Category.all.each do |category| %>
